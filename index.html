@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Dashboard RRHH - Power BI</title>
+    <title>Módulo 4 - Grupo 4 | Dashboard Power BI</title>
     <style>
         * {
             margin: 0;
@@ -19,12 +19,12 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0a0f1c; /* Color de fondo oscuro profesional */
+            background: #0a0f1c;
             display: flex;
             flex-direction: column;
         }
 
-        /* Header minimalista que se oculta en pantallas pequeñas si quieres */
+        /* Header compacto y adaptado a los bordes */
         .header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -47,7 +47,7 @@
         }
 
         .header h1::before {
-            content: " ";
+            content: "📊";
             font-size: 1.5rem;
         }
 
@@ -60,7 +60,7 @@
             font-weight: 500;
         }
 
-        /* Contenedor del iframe - ocupa todo el espacio restante */
+        /* Contenedor del iframe - ocupa TODO el espacio restante */
         .iframe-container {
             flex: 1;
             width: 100%;
@@ -89,7 +89,7 @@
             backdrop-filter: blur(5px);
         }
 
-        /* Opcional: Si quieres ocultar el header en móviles para más espacio */
+        /* Responsive para móviles */
         @media (max-width: 768px) {
             .header {
                 padding: 0.5rem 1rem;
@@ -107,8 +107,7 @@
             }
         }
 
-        /* Versión ultra fullscreen - si quieres ocultar todo excepto el dashboard */
-        /* Agrega ?fullscreen=true a la URL para activar modo kiosko */
+        /* Modo kiosko (oculta header y footer con ?fullscreen en la URL) */
         body.fullscreen .header,
         body.fullscreen .footer {
             display: none;
@@ -117,13 +116,13 @@
 </head>
 <body>
     <div class="header">
-        <h1>Tablero</h1>
+        <h1>Dashboard Desempeño - Módulo 4 - Grupo 4</h1>
         <div class="badge">Power BI Interactive</div>
     </div>
     
     <div class="iframe-container">
         <iframe 
-            title="Plantilla RRHH" 
+            title="proyectofinal_grupo4" 
             src="https://app.fabric.microsoft.com/reportEmbed?reportId=e036f12c-c20c-4540-832d-b717acc9b688&autoAuth=true&ctid=cf263038-f11c-49d2-9183-556a34b747e2" 
             frameborder="0" 
             allowFullScreen="true"
@@ -132,17 +131,16 @@
     </div>
     
     <div class="footer">
-        <span>Dashboard interactivo | Microsoft Fabric</span>
+        <span>Módulo 4 - Grupo 4 | Dashboard interactivo | Microsoft Fabric</span>
     </div>
 
-    <!-- Script para modo fullscreen opcional -->
     <script>
-        // Si la URL tiene ?fullscreen, oculta header y footer
+        // Modo kiosko: agrega ?fullscreen a la URL para ocultar header y footer
         if (window.location.search.includes('fullscreen')) {
             document.body.classList.add('fullscreen');
         }
         
-        // Doble clic en cualquier lugar entra/sale de pantalla completa del navegador
+        // Doble clic para pantalla completa del navegador
         document.addEventListener('dblclick', function() {
             if (!document.fullscreenElement) {
                 document.documentElement.requestFullscreen();
@@ -151,7 +149,7 @@
             }
         });
         
-        // Presiona 'f' para entrar/salir de pantalla completa
+        // Presiona 'f' para pantalla completa
         document.addEventListener('keydown', function(e) {
             if (e.key === 'f' || e.key === 'F') {
                 if (!document.fullscreenElement) {
