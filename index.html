@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard RRHH - Power BI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .header h1 {
+            color: #1e3c72;
+            font-size: 1.5rem;
+        }
+        
+        .badge {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .dashboard-wrapper {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+            padding: 1rem;
+        }
+        
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 47.5%; /* Proporción para 1140x541 */
+            overflow: hidden;
+        }
+        
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: white;
+            padding: 1rem;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.2rem;
+            }
+            .iframe-container {
+                padding-bottom: 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📊 Dashboard de Recursos Humanos - Power BI</h1>
+        <div class="badge">Reporte interactivo</div>
+    </div>
+    
+    <div class="container">
+        <div class="dashboard-wrapper">
+            <div class="iframe-container">
+                <!-- TU IFRAME DE POWER BI -->
+                <iframe 
+                    title="Plantilla RRHH" 
+                    width="1140" 
+                    height="541.25" 
+                    src="https://app.fabric.microsoft.com/reportEmbed?reportId=e036f12c-c20c-4540-832d-b717acc9b688&autoAuth=true&ctid=cf263038-f11c-49d2-9183-556a34b747e2" 
+                    frameborder="0" 
+                    allowFullScreen="true">
+                </iframe>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Powered by Microsoft Fabric & Vercel | Dashboard RRHH</p>
+        </div>
+    </div>
+</body>
+</html>
